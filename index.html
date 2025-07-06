@@ -1,0 +1,631 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bam & Gad Smart Legal System – AI & Automation Proposal</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+
+      .title-page {
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        color: white;
+        padding: 80px 60px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .title-page::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 2px,
+          transparent 2px
+        );
+        background-size: 30px 30px;
+        animation: drift 25s linear infinite;
+      }
+
+      @keyframes drift {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        100% {
+          transform: translate(30px, 30px) rotate(360deg);
+        }
+      }
+
+      .title-page h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .title-page .subtitle {
+        font-size: 1.4rem;
+        opacity: 0.9;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+        font-weight: 500;
+      }
+
+      .title-page .date {
+        font-size: 1.1rem;
+        opacity: 0.8;
+        position: relative;
+        z-index: 1;
+      }
+
+      .content {
+        padding: 60px;
+      }
+
+      .section {
+        margin-bottom: 50px;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #1e40af;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid #3b82f6;
+        position: relative;
+      }
+
+      .section h2::before {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(135deg, #3b82f6, #1e40af);
+        border-radius: 2px;
+      }
+
+      .section p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        color: #4b5563;
+      }
+
+      .overview-box {
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        padding: 35px;
+        border-radius: 15px;
+        border-left: 6px solid #3b82f6;
+        margin-top: 20px;
+      }
+
+      .overview-box p {
+        font-size: 1.15rem;
+        color: #1e40af;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .component-section {
+        margin-bottom: 35px;
+      }
+
+      .component-section h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #1e40af;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .component-section h3::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: #3b82f6;
+        border-radius: 50%;
+      }
+
+      .checklist {
+        list-style: none;
+        margin-left: 20px;
+      }
+
+      .checklist li {
+        font-size: 1.05rem;
+        margin-bottom: 12px;
+        position: relative;
+        padding-left: 35px;
+        color: #374151;
+      }
+
+      .checklist li::before {
+        content: "✅";
+        position: absolute;
+        left: 0;
+        font-size: 1.1rem;
+      }
+
+      .link-highlight {
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .link-highlight:hover {
+        border-bottom-color: #3b82f6;
+      }
+
+      .optional-section {
+        background: #f8fafc;
+        padding: 25px;
+        border-radius: 12px;
+        border-left: 4px solid #f59e0b;
+      }
+
+      .optional-section h4 {
+        color: #f59e0b;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .optional-section .checklist li::before {
+        content: "🔁";
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 25px;
+      }
+
+      .benefit-card {
+        background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+        padding: 25px;
+        border-radius: 12px;
+        border-left: 4px solid #10b981;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+      }
+
+      .benefit-card::before {
+        content: "💡";
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .benefit-card p {
+        font-size: 1rem;
+        color: #065f46;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .pricing-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .pricing-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+      }
+
+      .pricing-header {
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .pricing-header h4 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .pricing-body {
+        padding: 30px;
+      }
+
+      .pricing-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .pricing-item:last-child {
+        border-bottom: none;
+      }
+
+      .pricing-item .label {
+        font-weight: 500;
+        color: #374151;
+      }
+
+      .pricing-item .price {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #1e40af;
+      }
+
+      .contact-section {
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        color: white;
+        padding: 50px;
+        border-radius: 15px;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .contact-section h3 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        font-weight: 600;
+      }
+
+      .contact-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 25px;
+      }
+
+      .contact-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+      }
+
+      .contact-item p {
+        color: rgba(255, 255, 255, 0.9);
+        margin: 5px 0;
+      }
+
+      .contact-item a {
+        color: #fbbf24;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .notes-section {
+        background: #f1f5f9;
+        padding: 30px;
+        border-radius: 12px;
+        margin-top: 30px;
+      }
+
+      .notes-section h4 {
+        color: #334155;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+      }
+
+      .notes-section ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .notes-section li {
+        font-size: 1.05rem;
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 25px;
+        color: #475569;
+      }
+
+      .notes-section li::before {
+        content: "📅";
+        position: absolute;
+        left: 0;
+      }
+
+      .footer {
+        background: #0f172a;
+        color: white;
+        text-align: center;
+        padding: 40px;
+        font-size: 1rem;
+      }
+
+      .footer p {
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0;
+      }
+
+      .tech-stack {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+      }
+
+      .tech-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .emoji {
+        font-size: 1.5rem;
+        margin-right: 10px;
+      }
+
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+        }
+
+        .container {
+          box-shadow: none;
+          border-radius: 0;
+        }
+
+        .title-page::before {
+          display: none;
+        }
+
+        .benefit-card:hover,
+        .pricing-card:hover {
+          transform: none;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Title Page -->
+      <div class="title-page">
+        <h1>Bam & Gad Smart Legal System</h1>
+        <p class="subtitle">AI & Automation Proposal</p>
+        <p class="subtitle">Prepared by Oladipupo Mustapha Akorede</p>
+        <p class="date">Date: Sunday, July 06, 2025</p>
+      </div>
+
+      <div class="content">
+        <!-- Overview Section -->
+        <div class="section">
+          <h2><span class="emoji">📌</span>Overview</h2>
+          <div class="overview-box">
+            <p>
+              This system transforms Bam & Gad Solicitors into an AI-powered,
+              automated legal firm with a modern website, 24/7 AI support, smart
+              onboarding, and centralized data.
+            </p>
+          </div>
+        </div>
+
+        <!-- Components Section -->
+        <div class="section">
+          <h2><span class="emoji">🌐</span>Components of the Package</h2>
+
+          <div class="component-section">
+            <h3>1. Website & Branding</h3>
+            <ul class="checklist">
+              <li>Responsive legal landing page</li>
+              <li>
+                Live at:
+                <a
+                  href="https://bam-gad-solicitors.lovable.app/"
+                  class="link-highlight"
+                  >https://bam-gad-solicitors.lovable.app/</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="component-section">
+            <h3>2. AI Chat Assistant</h3>
+            <ul class="checklist">
+              <li>Website chatbot (legal FAQ + onboarding)</li>
+              <li>
+                Telegram bot:
+                <a
+                  href="https://t.me/BamGadSolicitorsbot"
+                  class="link-highlight"
+                  >https://t.me/BamGadSolicitorsbot</a
+                >
+              </li>
+              <li>Optional: WhatsApp bot integration</li>
+            </ul>
+          </div>
+
+          <div class="component-section">
+            <h3>3. Smart Onboarding Automation</h3>
+            <ul class="checklist">
+              <li>Intake form → Airtable CRM</li>
+              <li>Auto-generated legal PDF (intake summary)</li>
+              <li>Email sent to client</li>
+              <li>Slack notification to legal team</li>
+            </ul>
+          </div>
+
+          <div class="component-section">
+            <h3>4. Airtable CRM</h3>
+            <ul class="checklist">
+              <li>Unified record of all leads from all platforms</li>
+              <li>Tracks name, case type, channel, submission time</li>
+            </ul>
+          </div>
+
+          <div class="component-section">
+            <h3>5. Legal PDF Generator</h3>
+            <ul class="checklist">
+              <li>Branded intake summary PDF sent to each client</li>
+              <li>Also stored for internal records</li>
+            </ul>
+          </div>
+
+          <div class="optional-section">
+            <h4>6. Optional Add-Ons</h4>
+            <ul class="checklist">
+              <li>Social media autoposter (LinkedIn, Facebook, Instagram)</li>
+              <li>WhatsApp agent</li>
+              <li>e-Signature workflow</li>
+              <li>Payment collection (Paystack/Stripe)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Benefits Section -->
+        <div class="section">
+          <h2><span class="emoji">💡</span>Benefits</h2>
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <p>Saves 10+ hours/week on manual intake</p>
+            </div>
+            <div class="benefit-card">
+              <p>24/7 client communication across platforms</p>
+            </div>
+            <div class="benefit-card">
+              <p>Professional documentation every time</p>
+            </div>
+            <div class="benefit-card">
+              <p>Centralized lead data</p>
+            </div>
+            <div class="benefit-card">
+              <p>Scalable, customizable, future-ready</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing Section -->
+        <div class="section">
+          <h2><span class="emoji">💰</span>Pricing Options</h2>
+          <div class="pricing-container">
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h4>Option 1 – Project + Maintenance</h4>
+              </div>
+              <div class="pricing-body">
+                <div class="pricing-item">
+                  <span class="label">Setup</span>
+                  <span class="price">₦1,000,000</span>
+                </div>
+                <div class="pricing-item">
+                  <span class="label">Monthly Hosting/Support</span>
+                  <span class="price">₦200,000</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h4>Option 2 – All-In Monthly</h4>
+              </div>
+              <div class="pricing-body">
+                <div class="pricing-item">
+                  <span class="label">Monthly Fee</span>
+                  <span class="price">₦500,000</span>
+                </div>
+                <div class="pricing-item">
+                  <span class="label">Minimum Commitment</span>
+                  <span class="price">3 months</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+          <h3><span class="emoji">📞</span>Contact Information</h3>
+          <div class="contact-info">
+            <div class="contact-item">
+              <p><strong>Oladipupo Mustapha Akorede</strong></p>
+              <p>Legal Tech Consultant & Developer</p>
+            </div>
+            <div class="contact-item">
+              <p><strong>📧 Email:</strong></p>
+              <p>
+                <a href="mailto:oladips200@gmail.com">oladips200@gmail.com</a>
+              </p>
+            </div>
+            <div class="contact-item">
+              <p><strong>📞 Phone:</strong></p>
+              <p>+2349038580066</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notes Section -->
+        <div class="notes-section">
+          <h4><span class="emoji">📅</span>Notes</h4>
+          <ul>
+            <li>All workflows are no-code and easily adaptable</li>
+            <li>
+              Future additions (WhatsApp, social autoposter, client portal) are
+              supported
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

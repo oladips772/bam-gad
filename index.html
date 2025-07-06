@@ -191,6 +191,7 @@
         font-weight: 500;
         border-bottom: 1px solid rgba(59, 130, 246, 0.3);
         transition: all 0.3s ease;
+        word-break: break-all;
       }
 
       .link-highlight:hover {
@@ -251,7 +252,7 @@
 
       .pricing-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
         margin-top: 30px;
       }
@@ -307,6 +308,7 @@
         font-size: 0.9rem;
         font-weight: 600;
         color: #1e40af;
+        text-align: right;
       }
 
       .contact-section {
@@ -347,6 +349,7 @@
         color: #fbbf24;
         text-decoration: none;
         font-weight: 500;
+        word-break: break-all;
       }
 
       .notes-section {
@@ -413,6 +416,243 @@
       .emoji {
         font-size: 1.5rem;
         margin-right: 10px;
+      }
+
+      /* Mobile Responsive Styles */
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+
+        .container {
+          border-radius: 15px;
+          margin: 0;
+        }
+
+        .title-page {
+          padding: 40px 20px;
+        }
+
+        .title-page h1 {
+          font-size: 2.2rem;
+          margin-bottom: 15px;
+        }
+
+        .title-page .subtitle {
+          font-size: 1.1rem;
+          margin-bottom: 10px;
+        }
+
+        .title-page .date {
+          font-size: 1rem;
+        }
+
+        .content {
+          padding: 30px 20px;
+        }
+
+        .section {
+          margin-bottom: 35px;
+        }
+
+        .section h2 {
+          font-size: 1.5rem;
+          margin-bottom: 20px;
+          padding-bottom: 10px;
+        }
+
+        .section h2::before {
+          width: 40px;
+        }
+
+        .section p {
+          font-size: 1rem;
+          line-height: 1.7;
+        }
+
+        .overview-box {
+          padding: 20px;
+          border-radius: 10px;
+        }
+
+        .overview-box p {
+          font-size: 1rem;
+        }
+
+        .component-section h3 {
+          font-size: 1.2rem;
+          margin-bottom: 15px;
+        }
+
+        .checklist {
+          margin-left: 10px;
+        }
+
+        .checklist li {
+          font-size: 0.95rem;
+          padding-left: 30px;
+          margin-bottom: 10px;
+        }
+
+        .optional-section {
+          padding: 20px;
+        }
+
+        .optional-section h4 {
+          font-size: 1.1rem;
+        }
+
+        .benefits-grid {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+
+        .benefit-card {
+          padding: 20px;
+        }
+
+        .benefit-card p {
+          font-size: 0.95rem;
+        }
+
+        .pricing-container {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .pricing-header {
+          padding: 20px;
+        }
+
+        .pricing-header h4 {
+          font-size: 1.3rem;
+        }
+
+        .pricing-body {
+          padding: 20px;
+        }
+
+        .pricing-item {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 5px;
+          padding: 12px 0;
+        }
+
+        .pricing-item .price {
+          font-size: 0.85rem;
+        }
+
+        .contact-section {
+          padding: 30px 20px;
+        }
+
+        .contact-section h3 {
+          font-size: 1.5rem;
+          margin-bottom: 20px;
+        }
+
+        .contact-info {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+
+        .contact-item {
+          padding: 15px;
+        }
+
+        .notes-section {
+          padding: 20px;
+        }
+
+        .notes-section h4 {
+          font-size: 1.1rem;
+        }
+
+        .notes-section li {
+          font-size: 0.95rem;
+        }
+
+        .footer {
+          padding: 30px 20px;
+        }
+
+        .emoji {
+          font-size: 1.2rem;
+          margin-right: 8px;
+        }
+      }
+
+      /* Small mobile devices */
+      @media (max-width: 480px) {
+        body {
+          padding: 5px;
+        }
+
+        .title-page {
+          padding: 30px 15px;
+        }
+
+        .title-page h1 {
+          font-size: 1.8rem;
+        }
+
+        .title-page .subtitle {
+          font-size: 1rem;
+        }
+
+        .content {
+          padding: 20px 15px;
+        }
+
+        .section h2 {
+          font-size: 1.3rem;
+        }
+
+        .overview-box {
+          padding: 15px;
+        }
+
+        .checklist {
+          margin-left: 5px;
+        }
+
+        .checklist li {
+          font-size: 0.9rem;
+          padding-left: 25px;
+        }
+
+        .optional-section {
+          padding: 15px;
+        }
+
+        .benefit-card {
+          padding: 15px;
+        }
+
+        .pricing-header {
+          padding: 15px;
+        }
+
+        .pricing-body {
+          padding: 15px;
+        }
+
+        .contact-section {
+          padding: 20px 15px;
+        }
+
+        .contact-item {
+          padding: 12px;
+        }
+
+        .notes-section {
+          padding: 15px;
+        }
+
+        .footer {
+          padding: 20px 15px;
+        }
       }
 
       @media print {
@@ -558,43 +798,6 @@
         </div>
 
         <!-- Pricing Section -->
-        <!-- <div class="section">
-          <h2><span class="emoji">💰</span>Pricing Options</h2>
-          <div class="pricing-container">
-            <div class="pricing-card">
-              <div class="pricing-header">
-                <h4>Option 1 – Project + Maintenance</h4>
-              </div>
-              <div class="pricing-body">
-                <div class="pricing-item">
-                  <span class="label">Setup</span>
-                  <span class="price">₦1,000,000</span>
-                </div>
-                <div class="pricing-item">
-                  <span class="label">Monthly Hosting/Support</span>
-                  <span class="price">₦200,000</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="pricing-card">
-              <div class="pricing-header">
-                <h4>Option 2 – All-In Monthly</h4>
-              </div>
-              <div class="pricing-body">
-                <div class="pricing-item">
-                  <span class="label">Monthly Fee</span>
-                  <span class="price">₦500,000</span>
-                </div>
-                <div class="pricing-item">
-                  <span class="label">Minimum Commitment</span>
-                  <span class="price">3 months</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
         <div class="section">
           <h2><span class="emoji">💰</span> Pricing Options</h2>
           <div class="pricing-container">
